@@ -4,7 +4,6 @@ var neat;
 var population;
 var TotalPopulation;
 var generation = 0;
-
 var inputsTypes;
 
 function reset() {
