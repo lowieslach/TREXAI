@@ -1,4 +1,4 @@
-//teste
+//test
 
 class Dino {
   constructor() {
