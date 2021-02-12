@@ -1,5 +1,3 @@
-//test
-
 class Dino {
   constructor() {
     this.height = 50;
