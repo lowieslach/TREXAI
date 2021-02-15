@@ -119,6 +119,7 @@ function draw() {
       if (!dino.dead) {
         dino.update();
         dino.draw();
+        dino.speed();
         if (checkCollision(dino)) {
           dino.dead = true;
           dino.score = score;
@@ -171,7 +172,7 @@ function doGen() {
 function drawTrainInfo() {
   textAlign(RIGHT);
   textSize(25);
-  text("Train Information:", width - 10, 30);
+  text("Model Information:", width - 10, 30);
   text("Generation: " + generation, width - 10, 60);
   text("Population: " + population, width - 10, 90);
 }
