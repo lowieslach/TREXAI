@@ -3,10 +3,6 @@ var score = 0;
 var gameOver = false;
 let dinoImg;
 
-function preload() {
-  dinoImg = loadImage("assets/dino.png");
-}
-
 function setup() {
   var canvas = createCanvas(640, 480);
   canvas.parent("canvas");
@@ -19,8 +15,10 @@ function draw() {
   score++;
   updateGame(score);
 
+  dino.speed();
   dino.update();
   dino.draw();
+  
 
   // console.log(checkCollision(dino));
   if (checkCollision(dino)) {

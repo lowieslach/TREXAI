@@ -27,8 +27,10 @@ function draw() {
   score++;
   updateGame(score);
 
+  dino.speed();
   dino.update();
   dino.draw();
+  
 
   // console.log(checkCollision(dino));
   if (checkCollision(dino)) {

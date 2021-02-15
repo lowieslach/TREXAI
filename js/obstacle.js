@@ -1,7 +1,7 @@
 const OBSTACLEX = 640; //X-waarde beginpositie obstacle
 const BUFFERX = 200; //X-waarde om te voorkomen dat obstacle te laat getekend word
 
-var speedfactor = 1;
+var speedfactor = 5;
 var generateThreshold = 100;
 var generateTicks = 0;
 var obstacles = [];
@@ -44,8 +44,9 @@ class Obstacle {
   }
 
   move() {
-    this.x -= 5 * speedfactor;
+      this.x -= speedfactor;
   }
+
   draw() {
     for (var i = 0; i < this.amount; i++) {
       rect(
@@ -65,7 +66,7 @@ class Obstacle {
 
 function newObstacle() {
   if (generateThreshold < generateTicks) {
-    generateThreshold = 40 + Math.floor(Math.random() * 70);
+    generateThreshold = 40 + Math.floor(Math.random() * (60-speedfactor));
     generateTicks = 0;
     obstacles.unshift(
       new Obstacle(OBSTACLES[Math.floor(Math.random() * OBSTACLES.length)])

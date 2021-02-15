@@ -1,3 +1,47 @@
 #canvas canvas { 
     border: 10px solid black;
 }
+
+header ul {
+    margin: 0;
+    padding: 0;
+  }
+  
+  header li {
+    float: left;
+    display: inline;
+    padding: 0 20px 0 20px;
+  }
+  
+  header nav {
+    float: left;
+    margin-top: 10px;
+  }
+
+  header {
+    background-color: #292F33;
+    border-bottom: #55ACEE 3px solid;
+    padding-top: 30px;
+    min-height: 70px;
+    margin-bottom: 25px;
+  }
+
+  .container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 16pt;
+  }
+  
+  .title {
+    color: #55ACEE;
+    float: left;
+    margin: auto;
+  }
+
+  a {
+      text-decoration: none;
+      color: #55ACEE;
+  }

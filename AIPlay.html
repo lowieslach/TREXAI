@@ -1,25 +1,38 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>T-REX AI</title>
-    <link href="./css/style.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>
-    <script defer src="https://unpkg.com/p5.collide2d"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  </head>
-  <body>
-    <script src="./lib/AINEAT.js"></script>
-    <script src="./js/obstacle.js"></script>
-    <script src="./js/dino.js"></script>
-    <script src="./js/gameLogic.js"></script>
-    <script src="./js/sketchAIPlay.js"></script>
 
-    <a href="/">PLAY</a>
-    <a href="/train.html">TRAIN</a>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>T-REX AI</title>
+  <link href="./css/style.css" rel="stylesheet" type="text/css" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="./lib/p5.min.js"></script>
+  <script defer src="./lib/p5.collide2d.js"></script>
+  <script src="./lib/jquery.min.js"></script>
+</head>
 
-    <h1>PLAY</h1>
-    <div id="canvas"></div>
-  </body>
+<body>
+  <script src="./lib/AINEAT.js"></script>
+  <script src="./js/obstacle.js"></script>
+  <script src="./js/dino.js"></script>
+  <script src="./js/gameLogic.js"></script>
+  <script src="./js/sketchAIPlay.js"></script>
+
+  <header>
+    <div class="container">
+      <nav>
+        <ul>
+          <li><a href="/">Play Game</a></li>
+          <li><a href="/train.html">Train AI model</a></li>
+        </ul>
+      </nav>
+
+      <h1 class="title">Import AI model</h1>
+    </div>
+  </header>
+
+  <div id="canvas"></div>
+</body>
+
 </html>
