@@ -7,14 +7,13 @@ function setup() {
   var canvas = createCanvas(640, 480);
   canvas.parent("canvas");
   dino = new Dino();
-  obstacles = [new Obstacle(OBSTACLES[0])];
+  obstacles = [new Obstacle(OBSTACLES[Math.floor(Math.random() * OBSTACLES.length)])];
 }
 
 function draw() {
   if (gameOver) return;
   score++;
   updateGame(score);
-
   speed();
   dino.update();
   dino.draw();
@@ -32,7 +31,8 @@ function draw() {
 
 function resetGame() {
   dino = new Dino();
-  obstacles = [new Obstacle(OBSTACLES[0])];
+  obstacles = [new Obstacle(OBSTACLES[Math.floor(Math.random() * OBSTACLES.length)])];
+  generateTicks = 0;
   score = 0;
   gameOver = false;
 }
