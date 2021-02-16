@@ -68,3 +68,9 @@ function checkCollision(dino) {
 function changeTarget(value, id) {
   document.getElementById(id).innerText = value;
 }
+
+function speed() {
+  if (score > 500 && score < 150000) {
+    speedfactor = Math.floor(Math.log(score / 200)) + 5;
+  }
+}

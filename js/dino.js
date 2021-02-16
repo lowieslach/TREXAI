@@ -73,10 +73,4 @@ class Dino {
   insertInput(id, input) {
     if (inputsTypes.includes(id.toString())) this.inputs.push(input);
   }
-
-  speed(){
-   if(score > 500 && score < 150000){
-      speedfactor = (Math.floor(Math.log((score)/200)) + 5);
-    }
-  }
 }

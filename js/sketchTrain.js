@@ -5,6 +5,7 @@ var population;
 var TotalPopulation;
 var generation = 0;
 var inputsTypes;
+let settings;
 
 function reset() {
   let cros;
@@ -66,6 +67,15 @@ function reset() {
     populationSize: TotalPopulation,
   });
 
+  settings = {
+    mutRate,
+    TotalPopulation,
+    cros,
+    mut,
+    act,
+    inputsTypes,
+  };
+
   //reset obstacles
   obstacles = [new Obstacle(OBSTACLES[0])];
   //reset dinos
@@ -91,6 +101,8 @@ function draw() {
     score++;
     updateGame(score);
     drawTrainInfo();
+
+    speed();
 
     dinos.forEach((dino, i) => {
       if (dino.dead) return;
@@ -119,7 +131,6 @@ function draw() {
       if (!dino.dead) {
         dino.update();
         dino.draw();
-        dino.speed();
         if (checkCollision(dino)) {
           dino.dead = true;
           dino.score = score;
@@ -179,7 +190,13 @@ function drawTrainInfo() {
 
 function download() {
   // neat.bestCreature()
-  let jsonData = neat.export(dinos.findIndex((dino) => !dino.dead));
+  let model = neat.export(dinos.findIndex((dino) => !dino.dead));
+
+  let jsonData = {
+    model,
+    settings,
+  };
+
   console.log(jsonData);
   saveJSON(jsonData, "brain.json");
 }
