@@ -66,7 +66,7 @@ class Obstacle {
 
 function newObstacle() {
   if (generateThreshold < generateTicks) {
-    generateThreshold = 40 + Math.floor(Math.random() * (60-speedfactor));
+    generateThreshold = 40 + Math.floor(Math.random() * (55-speedfactor));
     generateTicks = 0;
     obstacles.unshift(
       new Obstacle(OBSTACLES[Math.floor(Math.random() * OBSTACLES.length)])

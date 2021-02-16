@@ -70,7 +70,7 @@ function changeTarget(value, id) {
 }
 
 function speed() {
-  if (score > 500 && score < 150000) {
+  if (score > 500 && score < 100000) {
     speedfactor = Math.floor(Math.log(score / 200)) + 5;
   }
 }
