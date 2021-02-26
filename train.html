@@ -77,12 +77,21 @@
     <label for="input-3">Obstacle width</label><br>
     <input type="checkbox" id="input-4" name="input-4" value="4">
     <label for="input-4">Obstacle height</label><br>
-    <input type="checkbox" id="input-5" name="input-5" value="5" checked>
+    <input type="checkbox" id="input-5" name="input-5" value="5">
     <label for="input-5">Speed Of Game</label><br>
 
     <button onclick="reset()">Save</button><p></p> 
 
+    <label for="input-0">observation: </label>
+    <input type="checkbox" id="observation" name="observation">
+    <label for="input-0">target: </label>
+    <input type="number" id="obTarget" name="obTarget" value="1000" min="10" max="100000">
+    <label for="input-0">games: </label>
+    <input type="number" id="obGames" name="obGames" value="5" min="1" max="100"><br>
+
+
     <div id="canvas"></div>
+
     <p>Speed: <span id="TextSpeed">1</span></p>
     <input id="SliderSpeed" type="range" min="1" max="10" value="1" step="1"
         onchange="changeTarget(this.value, 'TextSpeed')">

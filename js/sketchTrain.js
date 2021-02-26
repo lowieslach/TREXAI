@@ -6,6 +6,8 @@ var TotalPopulation;
 var generation = 0;
 var inputsTypes;
 let settings;
+var frames = 0;
+var games = 0;
 
 function reset() {
   let cros;
@@ -98,6 +100,7 @@ function setup() {
 
 function draw() {
   for (i = 0; i < $("#SliderSpeed").val(); i++) {
+    frames++;
     score++;
     updateGame(score);
     drawTrainInfo();
@@ -152,6 +155,19 @@ function draw() {
       }
     });
     if (dinoDead) doGen();
+    if (
+      score >= document.getElementById("obTarget").value &&
+      document.getElementById("observation").checked
+    ) {
+      games++;
+      if (games >= document.getElementById("obTarget").value) {
+        console.log(frames / games);
+      }
+      reset();
+    }
+    if (generation > 50) {
+      reset();
+    }
   }
 }
 
@@ -185,7 +201,11 @@ function drawTrainInfo() {
   textSize(25);
   text("Model Information:", width - 10, 30);
   text("Generation: " + generation, width - 10, 60);
-  text("Population: " + population, width - 10, 90);
+  text(
+    "Population: " + population + " from " + TotalPopulation,
+    width - 10,
+    90
+  );
 }
 
 function download() {
