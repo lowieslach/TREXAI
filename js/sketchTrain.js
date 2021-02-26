@@ -5,7 +5,6 @@ var population;
 var TotalPopulation;
 var generation = 0;
 var inputsTypes;
-let settings;
 var frames = 0;
 var games = 0;
 
@@ -57,6 +56,9 @@ function reset() {
 
   TotalPopulation = $("#SliderPopulationSize").val();
   let mutRate = $("#SliderMutationRate").val();
+
+  console.log(inputsTypes.length, mutRate, TotalPopulation);
+
   neat = new NEAT({
     model: [
       { nodeCount: inputsTypes.length, type: "input" },
@@ -69,14 +71,7 @@ function reset() {
     populationSize: TotalPopulation,
   });
 
-  settings = {
-    mutRate,
-    TotalPopulation,
-    cros,
-    mut,
-    act,
-    inputsTypes,
-  };
+  console.log(neat);
 
   //reset obstacles
   obstacles = [new Obstacle(OBSTACLES[0])];
@@ -211,12 +206,6 @@ function drawTrainInfo() {
 function download() {
   // neat.bestCreature()
   let model = neat.export(dinos.findIndex((dino) => !dino.dead));
-
-  let jsonData = {
-    model,
-    settings,
-  };
-
-  console.log(jsonData);
+  console.log(model);
   saveJSON(jsonData, "brain.json");
 }
